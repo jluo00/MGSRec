@@ -1,0 +1,19 @@
+seed: 2025
+data_path: '../datasets/MGSRec-dataset/'
+benchmark_filename: [train, valid, test]
+alias_of_item_id: [item_id_list]
+load_col:
+  inter: [user_id, item_id_list, item_id]
+train_neg_sample_args: ~
+
+gpu_id: 0
+
+epochs: 300
+train_batch_size: 2048
+learning_rate: 0.001
+
+topk: [5, 10, 20]
+metrics: [Recall, NDCG]
+valid_metric: Recall@20
+eval_batch_size: 2048
+stopping_step: 10
